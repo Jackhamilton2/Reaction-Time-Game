@@ -1,0 +1,262 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    /* Solid black background */
+    color: #f1f1f1;
+    /* Light gray for text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Title Screen */
+#title-screen {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+#title-screen h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(255, 69, 0, 0.8);
+    /* Accent glow */
+    color: #ff4500;
+    /* Orange accent */
+}
+
+#title-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #c7c7c7;
+}
+
+#title-screen button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #ff4500;
+    /* Orange accent */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.8);
+}
+
+#title-screen button:hover {
+    background: #ffa07a;
+    /* Softer orange */
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 160, 122, 0.9);
+}
+
+/* Level Display */
+#level-display {
+    font-size: 1.8rem;
+    margin: 10px;
+    color: #ffa07a;
+    /* Softer orange */
+    text-shadow: 1px 1px 3px rgba(255, 160, 122, 0.8);
+    display: none;
+}
+
+/* Game Area */
+#game-area {
+    display: none;
+    position: relative;
+    width: 90%;
+    height: 500px;
+    background: #1c1c1c;
+    border-radius: 15px;
+    border: 2px solid #444;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Stylish Ball */
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4500, #ffa07a);
+    /* Orange gradient */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.8), inset 0 0 15px #ff4500;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.ball:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 15px rgba(255, 160, 122, 0.9), inset 0 0 20px #ffa07a;
+}
+
+/* Feedback Text */
+#feedback-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    text-shadow: 2px 2px 8px rgba(255, 160, 122, 0.8);
+    color: #ffa07a;
+}
+
+/* End Screen */
+#end-screen {
+    display: none;
+    text-align: center;
+    background: #1c1c1c;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #444;
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+}
+
+#final-stats {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#leaderboard h3 {
+    margin-top: 20px;
+    color: #ff4500;
+    /* Accent */
+    text-shadow: 1px 1px 5px rgba(255, 69, 0, 0.8);
+}
+
+#leaderboard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+#leaderboard li {
+    margin: 5px 0;
+    color: #ffa07a;
+}
+
+/* Decorations */
+#decorations .circle,
+#decorations .triangle,
+#decorations .diamond,
+#decorations .hexagon,
+#decorations .star {
+    position: absolute;
+    z-index: 1;
+    animation: float 8s infinite ease-in-out, spin 12s infinite linear;
+    opacity: 0.6;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ff4500, #ffa07a);
+    /* Orange gradient */
+    border-radius: 50%;
+    top: 5%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #ffa07a;
+    top: 20%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.diamond {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff4500, #ffa07a);
+    transform: rotate(45deg);
+    top: 60%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.hexagon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ff4500, #ffa07a);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    top: 70%;
+    left: 90%;
+    animation-delay: 3s;
+}
+
+.star {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #ff4500, #ffa07a);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: 80%;
+    left: 5%;
+    animation-delay: 4s;
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+}

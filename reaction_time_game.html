@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time Game</title>
+    <link rel="stylesheet" href="reaction_time_game.css">
+</head>
+
+<body>
+    <!-- Title Screen -->
+    <div id="title-screen">
+        <h1>Reaction Time Game</h1>
+        <p>Click the balls as fast and accurately as you can. Compete for the leaderboard!</p>
+        <button id="start-game">Start Game</button>
+    </div>
+
+    <!-- Level Display -->
+    <div id="level-display">Level: 1</div>
+
+    <!-- Game Area -->
+    <div id="game-area">
+        <div id="feedback-text"></div>
+    </div>
+
+    <!-- End Screen (Initially Hidden) -->
+    <div id="end-screen">
+        <h2>Game Over!</h2>
+        <div id="final-stats"></div>
+        <input id="initials-input" type="text" placeholder="Enter your initials" maxlength="3" />
+        <button id="save-score">Save Score</button>
+        <div id="leaderboard">
+            <h3>Top Scores</h3>
+            <ul></ul>
+        </div>
+        <button id="restart-game">Restart Game</button>
+    </div>
+
+    <!-- Decorations -->
+    <div id="decorations">
+        <div class="circle"></div>
+        <div class="triangle"></div>
+        <div class="diamond"></div>
+        <div class="hexagon"></div>
+        <div class="star"></div>
+    </div>
+
+    <script src="reaction_time_game.js" defer></script>
+</body>
+
+</html>
